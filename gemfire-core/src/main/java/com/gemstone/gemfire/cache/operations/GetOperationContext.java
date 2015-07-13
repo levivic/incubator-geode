@@ -57,7 +57,11 @@ public class GetOperationContext extends KeyValueOperationContext {
    *         value in which case user should invoke {@link #getSerializedValue()}
    */
   public Object getObject() {
-    return this.value;
+    if (super.getSerializedValue() != null) {
+      return null;
+    } else {
+      return super.getValue();
+    }
   }
 
   /**
