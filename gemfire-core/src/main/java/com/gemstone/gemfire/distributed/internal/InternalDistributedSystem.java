@@ -484,7 +484,8 @@ public final class InternalDistributedSystem
    *          resource on which event is generated
    */
   public void handleResourceEvent(ResourceEvent event, Object resource) {
-    if (disableManagement) {
+    if (disableManagement || isLoner()) {
+      // no need for management events in a loner
       return;
     }
     if (resourceListeners.size() == 0) {
