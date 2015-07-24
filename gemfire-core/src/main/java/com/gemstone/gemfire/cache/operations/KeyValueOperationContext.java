@@ -26,7 +26,7 @@ public abstract class KeyValueOperationContext extends KeyOperationContext {
    * The value of the create/update operation.
    * @since 6.5
    */
-  protected /* TODO change to private */Object value;
+  private Object value;
   
   /**
    * True when the serialized object is a normal object; false when it is a raw

@@ -100,7 +100,7 @@ public class GetOperationContextImpl extends GetOperationContext implements Rele
     // our value (since this context did not retain it)
     // but we do make sure that any future attempt to access
     // the off-heap value fails.
-    if (this.value instanceof Chunk) {
+    if (super.getValue() instanceof Chunk) {
       this.released = true;
     }
   }
